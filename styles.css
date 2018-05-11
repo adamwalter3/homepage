@@ -1,0 +1,58 @@
+body {
+	background-color: MOCCASIN;
+}
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+	width: 160px;
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #555;
+}
+   
+nav ul a {
+	width: 160px;
+	display: block;
+    text-decoration: none;
+}
+
+nav li {
+	width: 160px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+nav li:last-child {
+    border-bottom: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+p {
+	font-size: 15px;
+}
+
