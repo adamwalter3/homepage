@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CMPS 262: Advanced Programming</title>
+	<style>* { font-family: monospace; }</style>
+	<link rel="stylesheet" href="styles.css">
+	<script src="jquery-3.3.1.min.js" > </script>
+	</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Adam Walter</h1>
+</header>
+  
+<nav>
+  <ul>
+    <li id="list_button_1"><a href="#">Home</a></li>
+    <li id="list_button_2"><a href="#">Some Page</a></li>
+    <li id="list_button_3"><a href="#">Some Other Page</a></li>
+  </ul>
+
+  <div class="dropdown">
+  	<button class="dropbtn">Set Font</button>
+  	<div class="dropdown-content">
+    	<a id="arial_font" href="#">Arial</a>
+    	<a id="verdana_font" href="#">Verdana</a>
+    	<a id="impact_font" href="#">Impact</a>
+  	</div>
+  </div>
+
+  <form class="radio_buttons" action="">
+  	<input type="radio" name="font_size" value="12px"> 12 px<br />
+  	<input type="radio" name="font_size" value="14px" checked> 14 px<br />
+  	<input type="radio" name="font_size" value="16px"> 16 px<br />
+  </form>
+</nav>
+
+<article id="page_1_content">
+	<img src="img/profile.jpg" height="99" width="99" alt="Image" style="float: left; margin: 4px 10px 0px 0px; border: 1px solid #000000;">
+	<p>Hello, I'm Adam Walter. I live in Crafton and enjoy Pittsburgh sports. I go to as many Pirates and Penguins games as I can each year.</p>
+
+	<p>I an currently taking Networking and Security, Advanced Programming, and Business Communications and Research. I can be contacted via email at adamwalter3@gmail.com.</p>
+
+	<p>His laudem menandri ad, rebum intellegebat mei no. Id mazim sententiae mea, pro tale omittam ne. Regione sanctus luptatum pro eu, error reprimique has te. Mei augue patrioque sententiae cu, eum cu bonorum sensibus mandamus.</p>
+</article>
+
+<article id="page_2_content" style="display:none;">
+	<p>Lorem ipsum dolor sit amet, nam adhuc appareat persecuti no. Usu audire persequeris et. Per congue intellegam ne, ne quas augue verterem eos. Fabellas repudiare definiebas id his, cum viderer omnesque accommodare an, vel solum munere persius id. Movet eruditi nec ea, ea vix enim deleniti patrioque, vix eu oporteat torquatos. Adhuc legere vulputate cu cum, vix at audiam verear mentitum. </p>
+
+	<p>His laudem menandri ad, rebum intellegebat mei no. Id mazim sententiae mea, pro tale omittam ne. Regione sanctus luptatum pro eu, error reprimique has te. Mei augue patrioque sententiae cu, eum cu bonorum sensibus mandamus.</p>
+</article>
+
+<article id="page_3_content" style="display:none;">
+	<p>Lorem ipsum dolor sit amet, duo ei rationibus dissentias. Vis tale adversarium ad, nominavi suavitate cu sea. An quo scaevola sententiae, sed verear tritani viderer cu. Ad aeterno eleifend nam, sea lorem sensibus scripserit ne. Nam nullam impedit dolorem cu, modus summo copiosae qui ei.</p>
+
+	<p>Ut per mollis epicurei abhorreant, duo persequeris adversarium eu. Ei modo molestiae eam, veri diceret nostrum mea ad. Ex pri noluisse adipisci, vix alii modo eu. Ad epicuri sensibus repudiare per. Ex nemore labitur mei.</p>
+
+	<p>Partem hendrerit ea has, sea no doming reformidans. At numquam torquatos vel. Augue oblique delectus has te, eruditi phaedrum platonem id pri. Vocent luptatum disputationi in ius, id brute percipit tincidunt sed. Ius populo oportere id, mel tantas denique periculis te.</p>
+</article>
+
+</div>
+
+<script>
+document.body.className += ' fade-out';
+$("#page_1_content").addClass('fade-out');
+
+$(function() {
+    $('body').removeClass('fade-out');
+    $("#page_1_content").removeClass('fade-out');
+});
+
+$("#list_button_1").click(function() {
+	$("#page_1_content").show();
+	$("#page_2_content").hide();
+	$("#page_3_content").hide();
+});
+
+$("#list_button_2").click(function() {
+	$("#page_1_content").hide();
+	$("#page_2_content").show();
+	$("#page_3_content").hide();
+});
+
+$("#list_button_3").click(function() {
+	$("#page_1_content").hide();
+	$("#page_2_content").hide();
+	$("#page_3_content").show();
+});
+
+$("#arial_font").click(function() {
+	changeFont("Arial")
+});
+
+$("#verdana_font").click(function() {
+	changeFont("Verdana")
+});
+
+$("#impact_font").click(function() {
+	changeFont("Impact")
+});
+
+$("input[name='font_size']").change(function() {
+	changeFontSize($('input[name=font_size]:checked').val())
+});
+
+function changeFontSize(size) {
+	$('#page_1_content p').css("font-size", size);
+	$('#page_2_content p').css("font-size", size);
+	$('#page_3_content p').css("font-size", size);
+}
+
+function changeFont(font) {
+	$('#page_1_content p').css("font-family", font);
+	$('#page_2_content p').css("font-family", font);
+	$('#page_3_content p').css("font-family", font);
+}
+
+</script>
+
+</body>
+</html>
